@@ -1,0 +1,39 @@
+<h3>Feature Two</h3>
+<p>
+  A more complex approach where the the children are wired up by the 
+  context service itself.  
+  
+  Child 1 is self aware and accepts a contextName @Input to register for 
+  being wired up.  Again this approach works when the components are 
+  written by the app authors themselves.  This approach is similar to the
+  context-consumer element approach where the eventual user of the context 
+  is responsible for wiring itself up to some degree.
+
+  Child 2 is a completely dumb component.  It is only accepting values 
+  through standard @Input bindings with no service injected.  The direct 
+  parent, here MiddleTwoComponent, is injected with the service instead
+  and calls the service to wire up the context.  This approach is similar 
+  to using the contextConsumer directive on the child element itself, where
+  the direct parent is responsible for feeding the context to the 
+  child.
+</p>
+<h4>Child 1 Prop Setters</h4>
+<div>
+  <input #c1prop1Input><button (click)="onSetC1Prop1()">Set Prop 1</button>
+</div>
+<div>
+  <span>Set Prop 2: </span>
+  <input (change)="onSetC1Prop2($event)" type="radio" name="C1Prop2" value="T">
+  <label>True</label>
+  <input (change)="onSetC1Prop2($event)" type="radio" name="C1Prop2" value="F">
+  <label>False</label>
+</div>
+  
+<h4>Child 2 Prop Setters</h4>
+<div>
+  <input #c2prop1Input type="number"><button (click)="onSetC2Prop1()">Set Prop 1</button>
+</div>
+<div>
+  <input #c2prop2Input><button (click)="onSetC2Prop2()">Set Prop 2</button>
+</div>
+<app-layout-two></app-layout-two>

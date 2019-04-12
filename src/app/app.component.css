@@ -1,0 +1,15 @@
+div.features-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div.feature-container {
+    max-width: 40%;
+}
+
+div.no-context-container {
+    border-bottom: 3px black solid;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}

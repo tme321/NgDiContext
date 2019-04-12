@@ -1,0 +1,18 @@
+<h3>Feature One</h3>
+<p>
+  Simplistic approach, just provide a prop based on a name.
+  Here the child component is injected with the context service
+  as that approach would be suitable for a wide variety of use
+  cases.
+</p>
+<div>
+  <input #foInput><button (click)="onSetProp1()">Set Prop 1</button>
+</div>
+<div>
+  <span>Set Prop 2: </span>
+  <input (change)="onSetProp2($event)" type="radio" name="Prop2" value="T">
+  <label>True</label>
+  <input (change)="onSetProp2($event)" type="radio" name="Prop2" value="F">
+  <label>False</label>
+</div>
+<app-middle-one></app-middle-one>

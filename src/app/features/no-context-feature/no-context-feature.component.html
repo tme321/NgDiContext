@@ -1,0 +1,23 @@
+<h2>Contextless Feature</h2>
+<p>
+  Here the child components are being used in the most basic way.  
+  Just bind backing variables to their @Inputs.  They work as expected.
+</p>
+<div>
+  <input #c1prop1Input><button (click)="onSetC1Prop1()">Set Prop 1</button>
+</div>
+<div>
+  <span>Set Prop 2: </span>
+  <input (change)="onSetC1Prop2($event)" type="radio" name="C1Prop2" value="T">
+  <label>True</label>
+  <input (change)="onSetC1Prop2($event)" type="radio" name="C1Prop2" value="F">
+  <label>False</label>
+</div>  
+<div>
+  <input #c2prop1Input type="number"><button (click)="onSetC2Prop1()">Set Val 1</button>
+</div>
+<div>
+  <input #c2prop2Input><button (click)="onSetC2Prop2()">Set Val 2</button>
+</div>
+<app-child-one [prop1]="prop1" [prop2]="prop2"></app-child-one>
+<app-child-two [val1]="val1" [val2]="val2"></app-child-two>
